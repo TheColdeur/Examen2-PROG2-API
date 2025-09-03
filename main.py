@@ -45,5 +45,5 @@ def getAllCars():
 def getCarById(id: int):
     for car in cars:
         if id == car.id:
-            return JSONResponse(content=car, status_code=200, media_type="application/json")
+            return JSONResponse(content=car.model_dump(), status_code=200, media_type="application/json")
     return Response(content="Not found", status_code=404)
